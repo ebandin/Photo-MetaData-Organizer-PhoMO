@@ -19,14 +19,14 @@ namespace TechJobs.Controllers
         }
 
         public List<Job> Jobs { get; private set; }
-// TODO # 1
+        //TODO # 1
         // The detail display for a given Job at URLs like /Job?id=17
         public IActionResult Index(int id)
         {
             
-            Jobs = jobData.FindByValue(id);
+            Job someJob = jobData.Find(id);
 
-            return View();
+            return View(someJob);
         }
 
         public IActionResult New()
@@ -55,6 +55,7 @@ namespace TechJobs.Controllers
                 //  think how the DataImporter works with the Job fields
                 jobData.Jobs.Add(newJob);
                 //add job to jobdata using newJob variable
+                // return with id
                 return View("/Job?id=" + newJob.ID.ToString());
 
             }

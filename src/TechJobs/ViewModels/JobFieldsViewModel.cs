@@ -4,23 +4,18 @@ using TechJobs.Models;
 
 namespace TechJobs.ViewModels
 {
-    public class JobFieldsViewModel
+    public class JobFieldsViewModel : BaseViewModel
     {
         // TODO #7.2 - Extract members common to SearchJobsViewModel
         // to BaseViewModel
 
-        // The current column
-        public JobFieldType Column { get; set; }
-
         // All fields in the given column
         public IEnumerable<JobField> Fields { get; set; }
 
-        // All columns, for display
-        public List<JobFieldType> Columns { get; set; }
 
-        // View title
-        public string Title { get; set; } = "";
-
+        // i see a base model version of this, but it doesn't seem to move
+        // my references over to the parent class when deleted
+        // not inheriting? 
         public JobFieldsViewModel()
         {
             // Populate the list of all columns
