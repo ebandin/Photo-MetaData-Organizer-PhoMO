@@ -44,28 +44,28 @@ namespace TechJobs.Controllers
                 Job newJob = new Job
                 {
                     Name = newJobViewModel.Name,
-                    //Employer = JobData.Find(newJobViewModel.EmployerID),
-                    Employer = newJobViewModel.EmployerID,
-                    Location = newJobViewModel.Location,
-                    CoreCompetency =
-                    PositionType =
+                    Employer = jobData.Employers.Find(newJobViewModel.EmployerID),
+                    Location = jobData.Locations.Find(newJobViewModel.LocationsID),
+                    CoreCompetency = jobData.CoreCompetencies.Find(newJobViewModel.CoreCompetenciesID),
+                    PositionType = jobData.PositionTypes.Find(newJobViewModel.PositionTypesID),
 
-                    //newJobViewModel.
+                    //newJobViewModel. gives access to the view model with all the IDs
                 };
-                // th jobcontroller connects to the JobData function of Find
-                //  change how the DataImporter works with the Job fields
-                // 
-                return View("Index", newJobViewModel);
+                // the jobcontroller connects to the JobData function of Find
+                //  think how the DataImporter works with the Job fields
+                jobData.Jobs.Add(newJob);
+                //add job to jobdata using newJob variable
+                return View("/Job?id=" + newJob.ID.ToString());
 
             }
-            else
-            {
-                newJobViewModel.Jobs = jobData.FindByColumnAndValue(newJobViewModel.Column, newJobViewModel.Value);
-            }
+            //else
+            //{
+            //    newJobViewModel.Jobs = jobData.FindByColumnAndValue(newJobViewModel.Column, newJobViewModel.Value);
+            //}
 
-            newJobViewModel.Title = "Search";
+            //newJobViewModel.Title = "Search";
 
-            ;
+            //;
 
             //TODO #6 - Validate the ViewModel and if valid, create a 
             //new Job and add it to the JobData data store.Then
