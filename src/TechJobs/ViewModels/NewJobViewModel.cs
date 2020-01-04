@@ -34,6 +34,8 @@ namespace TechJobs.ViewModels
         // TODO #3 - Included other fields needed to create a job,
         // with correct validation attributes and display names.
         //take the example here and make it each one, rather than only apply to one
+
+            // used job fields view model as base to repurpose
         public List<SelectListItem> Employers { get; set; } = new List<SelectListItem>();
         public List<SelectListItem> Locations { get; set; } = new List<SelectListItem>();
         public List<SelectListItem> CoreCompetencies { get; set; } = new List<SelectListItem>();
@@ -85,6 +87,8 @@ namespace TechJobs.ViewModels
 
             // TODO #4 - populate the other List<SelectListItem> 
             // collections needed in the view
+
+            //for each made for each list type
 
         }
     }

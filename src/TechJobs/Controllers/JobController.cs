@@ -18,7 +18,6 @@ namespace TechJobs.Controllers
             jobData = JobData.GetInstance();
         }
 
-        public List<Job> Jobs { get; private set; }
         //TODO # 1
         // The detail display for a given Job at URLs like /Job?id=17
         public IActionResult Index(int id)
@@ -56,7 +55,7 @@ namespace TechJobs.Controllers
                 jobData.Jobs.Add(newJob);
                 //add job to jobdata using newJob variable
                 // return with id
-                return View("/Job?id=" + newJob.ID.ToString());
+                return Redirect("/Job?id=" + newJob.ID.ToString());
 
             }
             //else
