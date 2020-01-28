@@ -8,9 +8,12 @@ namespace TechJobs.Controllers
         public IActionResult Index()
         {
             Dictionary<string, string> actionChoices = new Dictionary<string, string>();
+            actionChoices.Add("userlogin", "UserLogin");
+            actionChoices.Add("listall", "Listall");
             actionChoices.Add("search", "Search");
-            actionChoices.Add("list", "List");
-            
+            actionChoices.Add("addnew", "Addnew"); 
+            actionChoices.Add("filepathbuilder", "Filepathbuilder");
+            actionChoices.Add("welcomehome", "Welcomehome");
             ViewBag.actions = actionChoices;
 
             return View();
