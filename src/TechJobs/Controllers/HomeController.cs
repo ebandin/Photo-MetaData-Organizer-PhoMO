@@ -8,7 +8,7 @@ namespace TechJobs.Controllers
         public IActionResult Index()
         {
             Dictionary<string, string> actionChoices = new Dictionary<string, string>();
-            actionChoices.Add("userlogin", "UserLogin");
+            actionChoices.Add("login", "Login");
             actionChoices.Add("listall", "Listall");
             actionChoices.Add("search", "Search");
             actionChoices.Add("addnew", "Addnew"); 
